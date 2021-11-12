@@ -1,0 +1,90 @@
+/*--------content-------*/
+
+.content {
+  display: grid;
+  grid-template-columns: 60% 40% ;
+  grid-template-rows: 9rem 1fr;
+  grid-template-areas: 
+  "header header"
+  "left right";
+
+  align-items: center; 
+}
+
+/*---------header--------*/
+
+header {
+  grid-area: header;
+}
+
+header img {
+  padding: 0 17.0rem;
+  margin-top: 3.0rem;
+}
+
+#image {
+  grid-area: left;
+
+  height: 100%;
+  margin-top: 2.0rem;
+}
+
+/*----------main--------*/
+
+main {
+  width:100%;
+
+  grid-area: right;
+  margin: 0 auto;
+
+  padding-bottom: 8rem;
+}
+
+
+/*------pass-container----*/
+
+.container {
+  width: min(36.8rem, 100%);
+ 
+
+  display: grid;
+  align-items: center;
+  gap: 3.5rem;
+
+}
+
+.room {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 20rem;
+}
+
+
+.form.pass {
+  display: flex;
+  flex-direction: column;
+  gap: 2.0rem;
+
+  padding-bottom: 8rem;
+}
+
+.form h2 {
+  padding-bottom: 1.0rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 1.0rem;
+  margin-bottom: 2.0rem;
+
+  border: .2rem solid #A1B2CD;
+  border-radius: .6rem;
+
+  background-color: transparent;
+  color: #A1B2CD;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+/*-------------responsive--------------*/

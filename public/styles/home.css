@@ -1,0 +1,118 @@
+/*-----------content-----------*/
+
+.content {
+  display: grid;
+  grid-template-columns: 60% 40% ;
+  grid-template-rows: 9rem 1fr;
+  grid-template-areas: 
+  "header header"
+  "left right";
+
+  align-items: center; 
+}
+
+/*---------header--------*/
+
+header {
+  grid-area: header;
+}
+
+header img {
+  padding: 0 17.0rem;
+  margin-top: 3.0rem;
+}
+
+#image {
+  grid-area: left;
+
+  height: 100%;
+  margin-top: 2.0rem;
+}
+
+/*----------main--------*/
+
+main {
+  grid-area: right;
+  margin: 0 auto;
+}
+
+
+/*---------main-container*/
+.container {
+  width: min(36.8rem, 100%);
+ 
+
+  display: grid;
+  align-items: center;
+  gap: 3.5rem;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.0rem;
+
+}
+
+.form h2 {
+  padding-bottom: 1.0rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 1.0rem;
+  margin-bottom: 2.0rem;
+
+  border: .2rem solid #A1B2CD;
+  border-radius: .6rem;
+
+  background-color: transparent;
+  color: #A1B2CD;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+
+}
+
+/*---------space--------*/
+
+#line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#line-one {
+  height: .1rem;
+  width: 50%;  
+
+  padding-right: 2.5rem;
+  margin-right: .8rem;
+
+  background-color: #A1B2CD;
+}
+
+#line-two {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+}
+
+#line-try {
+  height: .1rem;
+  width: 50%;
+
+  padding-left: 2.5rem;
+  margin-left: .8rem;
+  
+  background-color: #A1B2CD;
+}
+
+/*--------create-room--------*/
+
+.create-room {
+ display: grid;
+ gap: 3.0rem;
+
+ padding-top: 1.0rem;
+}

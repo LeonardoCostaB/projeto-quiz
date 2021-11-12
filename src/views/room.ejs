@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Sala - Rocket.Q</title>
+
+  <!--Style Global-->
+  <link rel="stylesheet" href="/styles/global.css">
+
+  <!--Style Room-->
+  <link rel="stylesheet" href="/styles/room.css">
+  <link rel="stylesheet" href="/styles/room-responsive.css">
+
+  <!--Script-->
+  <script src="/scripts/main.js" defer type="module"></script>
+
+</head>
+
+<body>
+  <div id="room" class="content">
+    <header>
+      <a href="/room"><img src="/images/icons/Logo.png" alt="Logo rocket.q"></a>
+        <div class="buttons">
+          <div class="button-border-blue" id="room-id" data-id="<%= roomId %>">
+            <img
+            src="/images/icons/dados.png"
+            alt="icon dado"
+            >
+
+            <!-- Quando eu estiver trabalhando com ejs eu posso importar o arquivo direto pra cá usando esse método como o roomId -->
+
+            <p>#<%= roomId %></p>
+          </div>
+          <a id="button-blue" href="/create-pass">
+            <img
+            src="/images/icons/user-white.png" alt="user">
+            Criar sala
+          </a>
+        </div>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="title">
+            Faça sua pergunta
+        </h2>
+
+        <!-- Action é responsável pela minha rota e eu sempre vou usar o method post.
+        
+        Muito importante em todos os input colocar o name, pq é nele que a gnt captura no banco de dados-->
+
+        <form action="/question/create/<%= roomId %>" method="POST">
+          <label class="sr-only" for-id="question">O que você quer perguntar</label>
+          <textarea
+          name="question"
+          id="question"
+          placeholder="O que você quer perguntar?"
+          ></textarea>
+            <footer>
+                <div class="lock">
+                    <img src="/images/icons/lock_black.png" alt="Cadeido">
+                    <p>
+                      Esta pergunta é anônima
+                    </p>
+                </div>
+                  <button id="button-blue">Enviar</button>
+            </footer>
+        </form>
+      </section>
+      <section id="ask">
+
+        <% if (isNoQuestions){ %>
+          <%- include('parts/no-question') %>
+        <% } %>
+      
+        <% questions.forEach(question => { %>
+          <div class="room-ask">
+            <div class="ask">
+              <div class="user">
+                <img src="/images/icons/user.png" alt="">
+              </div>
+              <p><%= question.title %></p>
+            </div>
+            <div class="check-delete">
+              <button id="check" data-id="<%= question.id%>"><img src="/images/icons/check 1.png" alt="check"> Marcar como lida</button>
+              <button id="delete" data-id="<%= question.id%>"><img src="/images/icons/lixeira.png" alt="delete"> Excluir</button>
+            </div>
+          </div>
+        <% }) %>
+      
+        <% questionsRead.forEach(questionRead => { %>
+        <div class="room-ask read">
+          <div class="ask">
+            <div class="user">
+              <img src="/images/icons/user.png" alt="">
+            </div>
+            <p>
+              <%= questionRead.title %></
+            </p>
+          </div>
+          <div class="check-delete">
+            <button id="delete" data-id="<%= questionRead.id%>"><img src="/images/icons/lixeira.png" alt="delete"> Excluir</button>
+          </div>
+        </div>
+        <% }) %>
+      </section>
+    </main>
+
+<!------MODAL------->
+
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal">
+          <h2 class="title">Excluir pergunta</h2>
+          <p>Tem certeza que você deseja excluir essa pergunta?</p>
+
+          <form action="#" method="POST">
+            <label class="sr-only" for-id="passoword">Digite sua senha</label>
+            <input 
+            type="password" 
+            name="password" 
+            id="passoword"
+            placeholder="Digite sua senha">
+
+            <div class="buttons-modal">
+              <a id="cancell" href="#">
+              Cancelar
+              </a>
+
+              <button class="button-blue">
+                Sim, excluir
+              </button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>

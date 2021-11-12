@@ -1,0 +1,319 @@
+.content {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+
+/*-----------section-room------------*/
+
+#room header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 2.5rem;
+}
+
+#room header .buttons {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+
+  width: 30%;
+}
+
+#room header .buttons #button-blue {
+  width: 100%;
+}
+
+#room header .buttons #button-border-blue {
+  padding: 1rem;
+  width: 90%;
+
+  cursor: default;
+}
+
+#room section h2 {
+ margin: 8rem 0 4rem 0; 
+}
+
+/*------------form-------------*/
+
+form {
+  padding-left: 1.4rem;
+  padding-bottom: 2rem;
+
+  border: .2rem solid #A1B2CD;
+  border-radius: .6rem;
+
+  font-size: 1.4rem;
+  color: #A1B2CD;
+}
+
+textarea {
+  padding: 1.0rem;
+  margin-bottom: 2.0rem;
+
+  width: 100%;
+  height: auto;
+  
+  border: none;
+
+  background-color: transparent;
+  opacity: 0.7;
+  
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+
+  resize: none;
+
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lock {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+footer #button-blue {
+  width: 10%;
+
+  padding: .8rem;
+  margin-right: .9rem;
+}
+
+/*-----------no-questions----------*/
+
+.information {
+  width: 50%;
+
+  margin:auto;
+  margin-top: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.information p {
+  font-family: 'Open sans', sans-serif;
+  
+  text-align: center;
+  color: #A1B2CD;
+
+  padding-bottom: 5rem;
+}
+
+/*-------------questions-----------*/
+
+#room #ask {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+ 
+  margin-top: 2rem;
+}
+
+.room-ask {
+  background-color: #E0ECFF;
+
+  border-radius: .6rem;
+ 
+}
+
+.ask {
+  display:flex;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 2rem;
+}
+
+.ask .user {
+  background-color: var(--blue);
+  clip-path: circle();
+  padding: 1.4rem 1.4rem .5rem 1.4rem;
+}
+
+.ask p {
+  display: flex;
+  align-items: center;
+
+  min-height: 5.2rem;
+
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  word-break: break-word;
+
+  color:#0D114F;
+}
+
+.check-delete {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+
+  padding:1rem 3rem 2rem 0;
+}
+
+.check-delete button {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+
+  background-color: transparent;
+  color: #4D5E77;
+
+  cursor: pointer;
+}
+
+/*------------questions-read-----------*/
+
+.room-ask.read {
+  background-color: #eaecf1;
+}
+
+.room-ask.read .ask .user {
+  background-color: #A1B2CD;
+}
+
+/*--------modal-overlay-----------*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.623);
+
+  visibility: hidden;
+}
+
+.modal-content {
+  width: min(59rem, 90%);
+  height: 50%;
+
+  margin: auto;
+
+  background-color: white;
+
+  border-radius: .6rem;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding-top: 5rem;
+}
+
+.modal p {
+  font-family: var(--font-title);
+  color: var(--check-box);
+}
+
+.modal form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  border: none;
+}
+
+.modal form #passoword {
+  width: 55%;
+  padding: 1.5rem;
+
+
+  font-family: 'Open sans';
+  font-size: 1.3rem;
+
+  border: 2px solid var(--blue);
+  border-radius: .6rem;
+
+  color: #4D5E77;
+}
+
+.modal .buttons-modal {
+  width: 100%;
+  padding-top: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+}
+
+.modal a {
+  width: 25%;
+  padding: 1.3rem;
+
+  font-family: var(--font-title);
+  text-align: center;
+
+  background-color: #E5EAF1;
+  color: var(--check-box);
+
+  border-radius: .6rem;
+
+}
+
+.modal button {
+  width: 25%;
+  padding: 1.3rem;
+
+  font-family: var(--font-title);
+
+  background-color: #E83F5B;
+  color: #E5EAF1;
+
+  border-radius: .6rem;
+
+  cursor: pointer;
+}
+
+.modal a:hover {
+  opacity: 0.7;
+}
+ 
+.modal button:hover{
+  filter: brightness(1.1);
+}
+
+.modal button.blue {
+  background-color: var(--blue);
+}
+
+/*-------Modal-active-------*/
+
+.modal-overlay.active {
+  visibility: visible;
+}
